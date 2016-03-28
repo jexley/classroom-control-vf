@@ -43,7 +43,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}": }
-  notify { "I just want this day to end": }
+  #notify { "I just want this day to end": }
   #file { '/etc/motd':
    # ensure => file,
     #owner => 'root',
