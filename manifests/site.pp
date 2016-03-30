@@ -39,11 +39,15 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 # Commented, Jack Exley
-# node default {
-node jexley.puppetlabs.vm {
+node default {
+#node jexley.puppetlabs.vm {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
+  if $::virtual != 'physical {
+    $vmname = capitalize($::virtual)
+    notify {"This is a ${vmname} virtual machine.":}
+  }
   
   # Commented, Jack Exley
   notify { "Hello, my name is ${::hostname}": }
