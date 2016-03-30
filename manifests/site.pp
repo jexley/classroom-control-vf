@@ -64,6 +64,7 @@ node jexley.puppetlabs.vm {
   #include users
   include skeleton
   include memcached
+  include nginx
   host { 'testing.puppetlabs.vm':
     ensure => present,
     ip => '127.0.0.1',
