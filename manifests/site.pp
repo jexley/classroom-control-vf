@@ -38,11 +38,14 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
+# Commented, Jack Exley
 # node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  notify { "Hello, my name is ${::hostname}": }
+  
+  # Commented, Jack Exley
+  #notify { "Hello, my name is ${::hostname}": }
   #notify { "I just want this day to end": }
   #file { '/etc/motd':
    # ensure => file,
@@ -51,15 +54,17 @@ ini_setting { 'random ordering':
     #mode => '0644',
     #content => 'Puppet code is fun to write, exley',
     #}
-  exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
-    path => '/usr/local/bin',
-    creates => '/etc/motd',
-    }
-  include users
-  include skeleton
-  host { 'testing.puppetlabs.vm':
-    ensure => present,
-    ip => '127.0.0.1',
-  }
   
-}
+  # Commented, Jack Exley  
+  #exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+   # path => '/usr/local/bin',
+    #creates => '/etc/motd',
+    #}
+  #include users
+  #include skeleton
+  #host { 'testing.puppetlabs.vm':
+   # ensure => present,
+    #ip => '127.0.0.1',
+  #}
+  
+#}
