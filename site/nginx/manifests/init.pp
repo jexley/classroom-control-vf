@@ -41,8 +41,8 @@ class ngnix {
     group => 'root',
     mode => '0664',
     source => 'puppet:///modules/nginx/default.conf',
-    require => Package['nginx']
-    notify => Service['nginx']
+    require => Package['nginx'],
+    notify => Service['nginx'],
   }
   
   service {'nginx':
