@@ -49,6 +49,9 @@ node default {
     notify {"This is a ${vmname} virtual machine.":}
   }
   
+  $message = hiera('message')
+  notify { $message: }
+  
   # Commented, Jack Exley
   notify { "Hello, my name is ${::hostname}": }
   notify { "I just want this day to end": }
